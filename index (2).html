@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Public Speaking Spark</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d14;--card:#151927;--line:#272d44;--tx:#ebe7de;--mu:#8d92a8;--gold:#e8b75a;--gold2:#f7d98f;--ok:#4ade80;--warn:#facc15;--bad:#f87171;--serif:"Cormorant Garamond",Georgia,serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:radial-gradient(800px 480px at 50% -80px,#2b2112,transparent 70%),var(--bg);color:var(--tx);font:16px/1.6 "DM Sans",system-ui,sans-serif;min-height:100vh}
+[hidden]{display:none!important}button{font:inherit;color:inherit;cursor:pointer}:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 5vw}
+.logo{font:700 1.35rem var(--serif);color:var(--gold2)}nav{display:flex;gap:6px}
+nav button{background:none;border:1px solid transparent;border-radius:99px;padding:6px 14px;color:var(--mu)}nav button:hover{border-color:var(--line);color:var(--tx)}
+main{max-width:920px;margin:0 auto;padding:0 5vw 48px}.v{display:none}.v.on{display:block}
+.hero{text-align:center;padding:3vh 0 24px}
+h1{font:700 clamp(2.6rem,9vw,5.2rem)/1.02 var(--serif);background:linear-gradient(120deg,#fff3d1,var(--gold) 60%,#b9812c);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font:italic 600 1.4rem var(--serif);color:var(--gold2);margin-top:8px}.desc{color:var(--mu);max-width:540px;margin:14px auto 22px}
+.demo{max-width:560px;margin:0 auto 28px;text-align:center;border-color:#4a3a1c}.demo .w{font:700 2.8rem var(--serif);color:var(--gold2)}.dt{min-height:3.4em}
+.caret{display:inline-block;width:2px;height:1em;background:var(--gold);vertical-align:-2px;margin-left:2px;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.opts{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:center;margin-bottom:22px}.opts small{display:block;color:var(--mu);font-size:.85rem;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}.chip{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 14px;color:var(--mu)}.chip.on{border-color:var(--gold);color:var(--gold2);background:#221b0e}
+.btn{background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,#c48a2f);color:#1b1305;border:0;border-radius:99px;padding:14px 32px;font-weight:700;font-size:1.05rem;box-shadow:0 8px 30px #e8b75a30}.btn:disabled{opacity:.5}
+.ghost{background:none;border:1px solid var(--line);border-radius:99px;padding:10px 20px;color:var(--mu)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+mark{background:#f8717126;color:var(--bad);border-radius:4px;padding:0 3px}.int{color:var(--mu)}
+.arena{text-align:center;padding-top:2vh}#lvTag{color:var(--mu);font-size:.9rem}
+#word{font:700 clamp(3rem,15vw,7.5rem)/1.05 var(--serif);color:var(--gold2);text-shadow:0 0 50px #e8b75a40;margin:8px 0 16px;overflow-wrap:anywhere}
+.ring{position:relative;width:min(180px,48vw);margin:0 auto 10px}.ring svg{display:block;transform:rotate(-90deg)}.ring circle{fill:none;stroke-width:7}.ring .bg{stroke:var(--line)}
+#arc{stroke:var(--ok);stroke-linecap:round;stroke-dasharray:339.3;stroke-dashoffset:0;transition:stroke .5s}
+#clock{position:absolute;inset:0;display:grid;place-items:center;font:600 2rem "DM Sans",sans-serif;font-variant-numeric:tabular-nums}
+#wv{width:100%;height:60px;display:block;margin:6px 0}
+.ls{display:flex;justify-content:center;gap:28px;color:var(--mu);font-size:.85rem;margin:4px 0 12px}.ls b{display:block;color:var(--tx);font-size:1.5rem}
+#tr,#rt{text-align:left;min-height:120px;max-height:32vh;overflow:auto;line-height:1.8}
+#cd{position:fixed;inset:0;display:none;place-items:center;background:#0b0d14ee;font:700 10rem var(--serif);color:var(--gold2);z-index:9;animation:pop 1s infinite}#cd.on{display:grid}@keyframes pop{from{transform:scale(1.3);opacity:.2}}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:16px 0}
+h2{font:700 1.9rem var(--serif);margin:6px 0 14px}h2 span{color:var(--gold2)}
+.player{display:flex;align-items:center;gap:12px;background:#0e111b;border:1px solid var(--line);border-radius:99px;padding:8px 18px 8px 8px}
+#pb{width:42px;height:42px;border-radius:50%;border:0;background:var(--gold);color:#1b1305}#rng{flex:1;accent-color:var(--gold);min-width:0}#tm{font-size:.8rem;color:var(--mu);font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:14px 0}.sc{text-align:center}.sc b{display:block;font:700 2.1rem var(--serif)}.sc small{color:var(--mu);font-size:.85rem}
+.tip{margin:14px 0;padding:14px 18px;border-left:3px solid var(--gold);background:#1a1810;border-radius:0 12px 12px 0;color:#d9d3c2}
+ul{list-style:none;padding:0}li{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}li b{flex:1;font-weight:500}li span{color:var(--mu);font-size:.85rem}li em{font-style:normal;color:var(--gold2);font-weight:700}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);width:max-content;max-width:min(92vw,460px);background:#2a1618;border:1px solid #6b2d33;color:#ffd7d7;padding:12px 18px;border-radius:14px;opacity:0;pointer-events:none;transition:.3s;z-index:10}#toast.on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header><b class="logo">⚡ Public Speaking Spark</b><nav><button data-v="home">Beranda</button><button data-v="hist">Riwayat</button></nav></header>
+<main>
+<section id="home" class="v on"><div class="hero">
+<h1>Public Speaking Spark</h1><p class="tag">“Satu Kata untuk Memantik Ide Bicara.”</p>
+<p class="desc">Terima satu kata acak, bicaralah spontan lewat Voice Note, dan lihat ucapanmu langsung menjadi teks. Kamu juga mendapat hitungan kata jeda, kecepatan bicara, dan skor kelancaran.</p></div>
+<div class="card demo"><small class="int">Contoh latihan</small><div class="w" id="dw"></div><div class="dt" id="dt"></div></div>
+<div class="opts"><div><small>Tingkat kesulitan</small><div class="chips" id="lvC"><button class="chip on" data-lv="mudah">Mudah</button><button class="chip" data-lv="sedang">Sedang</button><button class="chip" data-lv="sulit">Sulit</button></div></div>
+<div><small>Durasi bicara</small><div class="chips" id="duC"><button class="chip" data-d="30">30 detik</button><button class="chip on" data-d="60">1 menit</button><button class="chip" data-d="120">2 menit</button><button class="chip" data-d="180">3 menit</button><button class="chip" data-d="300">5 menit</button></div></div></div>
+<div style="text-align:center"><button class="btn" id="go">⚡ Mulai Berlatih</button></div></section>
+
+<section id="arena" class="v"><div class="arena"><div id="lvTag"></div><div id="word"></div>
+<div class="ring"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54"/><circle id="arc" cx="60" cy="60" r="54"/></svg><div id="clock"></div></div>
+<canvas id="wv"></canvas>
+<div class="ls"><div><b id="lw">0</b>kata</div><div><b id="lp">0</b>kata/menit</div><div><b id="lf">0</b>kata jeda</div></div>
+<div class="card" id="tr"></div>
+<div class="row"><button class="ghost" id="shuf">🔀 Ganti kata</button><button class="btn" id="main">🎙️ Mulai Rekam</button><button class="ghost" id="cancel">Batal</button></div></div>
+<div id="cd"></div></section>
+
+<section id="res" class="v"><h2>Hasil latihan: <span id="rw"></span></h2>
+<div class="player"><button id="pb" aria-label="Putar atau jeda">▶</button><input type="range" id="rng" min="0" max="1" step="0.1" value="0" aria-label="Posisi audio"><span id="tm"></span><audio id="au" hidden></audio></div>
+<div class="grid" id="cards"></div><div class="tip" id="tip"></div>
+<div class="card"><small class="int">Transkrip lengkap, kata jeda ditandai merah</small><div id="rt"></div></div>
+<div class="row"><button class="btn" id="again">Latihan lagi</button><button class="ghost" data-v="hist">Lihat riwayat</button></div></section>
+
+<section id="hist" class="v"><h2>Perkembanganmu</h2><div class="grid" id="hs"></div>
+<div class="card"><small class="int">Skor kelancaran, 12 latihan terakhir</small><div id="ch"></div></div>
+<div class="card" style="margin-top:12px"><small class="int">Latihan terbaru</small><ul id="hl"></ul></div></section>
+</main><div id="toast" role="alert"></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const WD={mudah:["Hujan","Kopi","Sepeda","Senyum","Pantai","Buku","Rumah","Sahabat","Musik","Pasar","Kucing","Mimpi"],sedang:["Perubahan","Kejujuran","Teknologi","Perjalanan","Kegagalan","Kebiasaan","Keberanian","Kesempatan","Kreativitas","Media sosial","Kemacetan","Tanggung jawab"],sulit:["Paradoks","Nostalgia","Ambisi","Keadilan","Eksistensi","Kompromi","Ironi","Utopia","Intuisi","Disrupsi","Minimalisme","Empati"]};
+const FILL=/\b(apa ya|ehm+|eh+|em+|hmm+|u{2,}h*m*|uh+|um+|anu+|jadi)\b/gi;
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const hl=s=>esc(s).replace(FILL,"<mark>$1</mark>"),cnt=s=>(s.match(FILL)||[]).length,wc=s=>s.trim().split(/\s+/).filter(Boolean).length;
+const fmt=s=>Math.floor(s/60)+":"+String(Math.floor(s%60)).padStart(2,"0");
+let S={lv:"mudah",dur:60,word:""},R={},tt;
+const au=$("#au"),rng=$("#rng"),pb=$("#pb");
+function show(v){au.pause();$$(".v").forEach(e=>e.classList.toggle("on",e.id===v));scrollTo(0,0);if(v==="hist")renderHist()}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),8000)}
+$$(".chips").forEach(g=>g.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;[...g.children].forEach(c=>c.classList.toggle("on",c===b));if(b.dataset.lv)S.lv=b.dataset.lv;if(b.dataset.d)S.dur=+b.dataset.d});
+$$("[data-v]").forEach(b=>b.onclick=()=>{abort();show(b.dataset.v)});
+/* demo */
+const D=[["Kopi","Jadi, kopi itu bukan sekadar minuman, tapi teman yang menemani pagi kita."],["Perubahan","Perubahan itu, ehm, selalu dimulai dari satu langkah kecil yang berani."],["Hujan","Hujan mengingatkanku pada masa kecil, bermain di halaman rumah."]];
+let di=0,dc=0;setInterval(()=>{const[w,t]=D[di];$("#dw").textContent=w;if(dc<=t.length){$("#dt").innerHTML=hl(t.slice(0,dc))+'<i class="caret"></i>';dc++}else if(dc++>t.length+40){di=(di+1)%D.length;dc=0}},55);
+/* arena */
+function pick(){const a=WD[S.lv].filter(w=>w!==S.word);S.word=a[Math.random()*a.length|0];$("#word").textContent=S.word}
+function setArc(f){const a=$("#arc");a.style.strokeDashoffset=339.3*Math.min(f,1);a.style.stroke=f<.6?"var(--ok)":f<.85?"var(--warn)":"var(--bad)"}
+function openArena(){abort();show("arena");R={};$("#lvTag").textContent="Tingkat "+S.lv+", "+fmt(S.dur)+" menit";pick();setArc(0);$("#clock").textContent=fmt(S.dur);
+ $("#tr").innerHTML='<span class="int">Transkrip suaramu akan muncul di sini secara langsung.</span>';["lw","lp","lf"].forEach(i=>$("#"+i).textContent=0);
+ $("#main").disabled=false;$("#main").textContent="🎙️ Mulai Rekam";$("#shuf").hidden=false;$("#wv").getContext("2d").clearRect(0,0,9999,9999)}
+$("#go").onclick=$("#again").onclick=openArena;$("#shuf").onclick=pick;$("#cancel").onclick=()=>{abort();show("home")};$("#main").onclick=()=>R.on?stop():begin();
+async function begin(){
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)return toast("Perekaman suara tidak didukung. Gunakan Chrome, Edge, atau Safari lewat alamat HTTPS.");
+ let st;try{st=await navigator.mediaDevices.getUserMedia({audio:true})}catch(e){return toast(e.name==="NotFoundError"?"Mikrofon tidak ditemukan. Sambungkan mikrofon, lalu coba lagi.":"Izin mikrofon belum diberikan. Klik ikon gembok di address bar, pilih “Izinkan” untuk mikrofon, lalu coba lagi. Jika halaman ini tampil dalam pratinjau, buka di tab baru.")}
+ const r=R={stream:st,fin:"",itm:"",chunks:[],on:false,dur:S.dur};$("#main").disabled=true;$("#shuf").hidden=true;
+ const cd=$("#cd");cd.classList.add("on");
+ for(let n=3;n>0;n--){cd.textContent=n;await new Promise(x=>setTimeout(x,1000));if(r.abort)return}
+ cd.classList.remove("on");start(r)}
+function start(r){
+ r.on=true;r.t0=Date.now();$("#main").disabled=false;$("#main").textContent="⏹ Selesai";
+ const m=["audio/webm;codecs=opus","audio/webm","audio/mp4"].find(t=>window.MediaRecorder&&MediaRecorder.isTypeSupported(t));
+ try{r.mr=new MediaRecorder(r.stream,m?{mimeType:m}:{});r.mr.ondataavailable=e=>e.data.size&&r.chunks.push(e.data);r.mr.onstop=()=>setTimeout(()=>finish(r),700);r.mr.start()}catch(e){toast("Rekaman audio tidak didukung browser ini. Transkripsi tetap berjalan.")}
+ try{const ac=new(window.AudioContext||window.webkitAudioContext)(),an=ac.createAnalyser();an.fftSize=128;ac.createMediaStreamSource(r.stream).connect(an);r.ac=ac;
+  const d=new Uint8Array(an.frequencyBinCount),c=$("#wv"),x=c.getContext("2d");
+  const draw=()=>{if(!r.on)return;r.raf=requestAnimationFrame(draw);const w=c.width=c.clientWidth*devicePixelRatio,h=c.height=c.clientHeight*devicePixelRatio;an.getByteFrequencyData(d);x.clearRect(0,0,w,h);const n=40,bw=w/n;
+   for(let i=0;i<n;i++){const v=d[i]/255,bh=Math.max(4,v*h);x.fillStyle="rgba(232,183,90,"+(.3+v*.7)+")";x.fillRect(i*bw+bw*.2,(h-bh)/2,bw*.6,bh)}};draw()}catch(e){}
+ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(SR){const s=new SR();r.sr=s;s.lang="id-ID";s.continuous=s.interimResults=true;
+  s.onresult=e=>{let t="";for(let i=e.resultIndex;i<e.results.length;i++){const q=e.results[i];if(q.isFinal)r.fin+=q[0].transcript+" ";else t+=q[0].transcript}r.itm=t;paint(r)};
+  s.onerror=e=>{if(/not-allowed|service/.test(e.error))toast("Transkripsi diblokir browser. Izinkan akses mikrofon dan pengenalan suara, lalu coba lagi.");else if(e.error==="network")toast("Transkripsi memerlukan koneksi internet.")};
+  s.onend=()=>{if(r.on)try{s.start()}catch(_){}};try{s.start()}catch(_){}}
+ else toast("Browser ini belum mendukung transkripsi langsung. Gunakan Chrome, Edge, atau Safari. Rekaman audio tetap berjalan.");
+ paint(r);
+ r.iv=setInterval(()=>{const el=(Date.now()-r.t0)/1000;$("#clock").textContent=fmt(Math.ceil(r.dur-el));setArc(el/r.dur);if(el>=r.dur)stop()},200)}
+function paint(r){const t=(r.fin+r.itm).trim(),n=wc(t),e=Math.max((Date.now()-r.t0)/1000,1);
+ $("#tr").innerHTML=t?hl(r.fin)+'<span class="int">'+esc(r.itm)+"</span>":'<span class="int">Mulai bicara, kata-katamu akan muncul di sini.</span>';
+ $("#tr").scrollTop=1e5;$("#lw").textContent=n;$("#lp").textContent=Math.round(n/e*60);$("#lf").textContent=cnt(t)}
+function halt(r){r.on=false;clearInterval(r.iv);cancelAnimationFrame(r.raf);try{r.mr&&r.mr.state!=="inactive"&&r.mr.stop()}catch(_){}r.stream&&r.stream.getTracks().forEach(t=>t.stop());try{r.ac&&r.ac.close()}catch(_){}}
+function stop(){const r=R;if(!r.on)return;r.el=Math.min((Date.now()-r.t0)/1000,r.dur);try{r.sr&&r.sr.stop()}catch(_){}const hasMr=r.mr&&r.mr.state!=="inactive";halt(r);if(!hasMr)setTimeout(()=>finish(r),700);$("#main").disabled=true;$("#main").textContent="Memproses…"}
+function abort(){if(!R.stream)return;R.abort=true;if(R.mr)R.mr.onstop=null;try{R.sr&&R.sr.abort()}catch(_){}halt(R);$("#cd").classList.remove("on")}
+/* hasil */
+function finish(r){if(r.abort)return;const t=(r.fin+r.itm).trim(),n=wc(t),f=cnt(t),el=Math.max(r.el||1,1),wpm=Math.round(n/el*60),sc=n<3?0:Math.max(0,Math.round(100-f/n*300));
+ r.url=URL.createObjectURL(new Blob(r.chunks,{type:(r.mr&&r.mr.mimeType)||"audio/webm"}));au.src=r.url;rng.max=el;rng.value=0;pb.textContent="▶";$("#tm").textContent="0:00 / "+fmt(Math.round(el));
+ $("#rw").textContent=S.word;$("#rt").innerHTML=t?hl(t):'<span class="int">Tidak ada ucapan yang terdeteksi.</span>';
+ const col=sc>=80?"ok":sc>=60?"warn":"bad";
+ $("#cards").innerHTML=[["Skor kelancaran",sc,"var(--"+col+")"],["Kecepatan (kata/menit)",wpm,""],["Total kata",n,""],["Kata jeda",f,f?"var(--bad)":""]].map(([l,v,c])=>'<div class="card sc"><b style="color:'+c+'">'+v+"</b><small>"+l+"</small></div>").join("");
+ const pace=wpm<100?"Tempomu agak lambat. Coba percepat sedikit.":wpm<=160?"Tempomu ideal (100 sampai 160 kata per menit).":"Tempomu terlalu cepat. Beri jeda napas antar kalimat.";
+ $("#tip").textContent=!n?"Tidak ada ucapan yang terdeteksi. Pastikan mikrofon aktif, bicara lebih dekat, dan gunakan Chrome, Edge, atau Safari.":(sc>=85?"Luar biasa, bicaramu mengalir lancar. ":sc>=65?"Bagus. Kurangi kata jeda dengan menarik napas sejenak. ":"Saat kehabisan kata, diam sejenak lebih baik daripada mengisi dengan kata jeda. ")+pace;
+ if(n>0){const a=load();a.push({t:Date.now(),w:S.word,wpm,sc,f,n});save(a)}
+ show("res");$("#main").textContent="🎙️ Mulai Rekam"}
+pb.onclick=()=>au.paused?au.play():au.pause();au.onplay=()=>pb.textContent="⏸";au.onpause=au.onended=()=>pb.textContent="▶";
+au.ontimeupdate=()=>{rng.value=au.currentTime;$("#tm").textContent=fmt(au.currentTime)+" / "+fmt(Math.round(R.el||0))};rng.oninput=()=>au.currentTime=rng.value;
+/* riwayat */
+const load=()=>{try{return JSON.parse(localStorage.getItem("sparkHist"))||[]}catch(e){return[]}},save=a=>{try{localStorage.setItem("sparkHist",JSON.stringify(a.slice(-100)))}catch(e){}};
+const dk=d=>d.toLocaleDateString("en-CA");
+function renderHist(){const a=load(),days=new Set(a.map(x=>dk(new Date(x.t))));let st=0,d=new Date();if(!days.has(dk(d)))d.setDate(d.getDate()-1);while(days.has(dk(d))){st++;d.setDate(d.getDate()-1)}
+ const s=a.map(x=>x.sc),best=s.length?Math.max(...s):0,avg=s.length?Math.round(s.reduce((p,c)=>p+c,0)/s.length):0;
+ $("#hs").innerHTML=[["🔥",st,"Streak harian"],["🎙️",a.length,"Total latihan"],["🏆",best,"Skor terbaik"],["📈",avg,"Rata-rata skor"]].map(([i,v,l])=>'<div class="card sc"><b>'+i+" "+v+"</b><small>"+l+"</small></div>").join("");
+ const p=a.slice(-12),pt=p.map((x,i)=>[p.length>1?15+i*270/(p.length-1):150,115-x.sc]);
+ $("#ch").innerHTML=p.length?'<svg viewBox="0 0 300 130" style="width:100%;margin-top:8px">'+[15,65,115].map(y=>'<line x1="15" x2="285" y1="'+y+'" y2="'+y+'" stroke="#272d44"/>').join("")+'<polyline fill="none" stroke="#e8b75a" stroke-width="2" points="'+pt.map(q=>q.join(",")).join(" ")+'"/>'+pt.map((q,i)=>'<circle cx="'+q[0]+'" cy="'+q[1]+'" r="4" fill="#f7d98f"><title>Skor '+p[i].sc+"</title></circle>").join("")+"</svg>":'<p class="int">Belum ada data. Selesaikan satu latihan untuk melihat grafikmu.</p>';
+ $("#hl").innerHTML=a.slice(-8).reverse().map(x=>"<li><span>"+new Date(x.t).toLocaleDateString("id-ID",{day:"numeric",month:"short"})+"</span><b>"+esc(x.w)+"</b><span>"+x.wpm+" kata/menit</span><em>"+x.sc+"</em></li>").join("")||'<li class="int">Riwayat masih kosong.</li>'}
+</script></body></html>
